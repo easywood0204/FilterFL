@@ -1,0 +1,38 @@
+---
+
+#fed
+type: CIFAR10
+algorithm: FedAvg
+epochs: 2000
+eta: 1
+local_epochs: 2
+batch_size: 128
+num_clients: 10
+number_of_total_participants: 100
+lr: 0.01
+lr_decay: True
+lr_decay_epoch: 1
+lr_decay_gamma: 0.998
+momentum: 0.9
+decay: 0.0005
+
+#non-iid
+sampling_dirichlet: True
+dirichlet_alpha: 1
+
+#poison
+is_poison: True
+poison_epochs: 6
+poison_lr: 0.005
+poison_rate: 0.5
+# -1 means None
+
+trigger_num: 1
+poison_client_num: 10
+0_poison_pattern: [[0, 0], [0, 1], [0, 2], [0, 3], [0, 6], [0, 7], [0, 8], [0, 9], [3, 0], [3, 1], [3, 2], [3, 3], [3, 6], [3, 7], [3, 8], [3, 9]]
+#defence
+defence_method: ours
+ours_standard: [0.50, 0.40, 0.30, 0.20]
+
+#seed
+seed: 1
